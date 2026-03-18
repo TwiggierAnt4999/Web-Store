@@ -136,8 +136,11 @@ def main(page: ft.Page):
 
 
 # 🔥 IMPORTANTE PARA WEB / RENDER
+import os
+
 ft.app(
     target=main,
-    view=ft.WEB_BROWSER,
-    assets_dir="assets"
+    assets_dir="assets",
+    port=int(os.environ.get("PORT", 10000)),
+    host="0.0.0.0"
 )
